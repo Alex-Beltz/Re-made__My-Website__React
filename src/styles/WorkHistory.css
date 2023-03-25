@@ -1,0 +1,50 @@
+.WorkExperienceCont {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem;
+}
+
+.ExperinceCategoryCont {
+  display: flex;
+  align-items: center;
+  background-color: #78938a;
+  padding: 1.5rem;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.WorkExperienceDescription {
+  width: 55%;
+  color: #163e58;
+}
+.WorkExperienceDescription:nth-child(even) {
+  padding-right: 2rem;
+}
+.WorkExperienceDescription:nth-child(odd) {
+  padding-left: 2rem;
+}
+
+.WorkExperienceDescription h2 {
+  font-weight: bold;
+  color: #084410;
+}
+
+.WorkExperienceImg {
+  width: 35%;
+}
+
+.WorkExperienceImg img {
+  height: 100%;
+  width: 100%;
+}
+
+.WorkExperienceImg:nth-child(odd) {
+  padding-left: 2rem;
+  margin-right: 3rem;
+}
+.WorkExperienceImg:nth-child(even) {
+  padding-right: 2rem;
+  margin-left: 3rem;
+}

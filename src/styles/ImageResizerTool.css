@@ -1,0 +1,163 @@
+.imageResizerContainer {
+  display: flex;
+  background-color: #525e75;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 1.75rem;
+  padding-top: 1.75rem;
+}
+/* .imageResizerContainer input */
+.imageResizerContainer select,
+.imageResizerContainer option {
+  background-color: #5d5d80;
+  padding: 0.25rem;
+}
+.imageResizerContainer select {
+  margin-bottom: 0.35rem;
+}
+
+.imageResizerRow {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+}
+
+header {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.imageDropBox {
+  width: 500px;
+  height: 500px;
+  border: 3px dashed #a7c6d3;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #368d4d;
+}
+.imageDropBox {
+  border: 3px dashed #cfe9d6;
+}
+
+.imageDropBoxInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  border-radius: 1rem;
+}
+
+.resizedImagesCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: #397a4b;
+}
+
+.resizedImagesCont div {
+  padding: 0.5rem;
+  background-color: #397a4b;
+}
+
+.dropAreaText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto 1rem auto;
+}
+
+.dropAreaText > div:first-child {
+  color: #2bbde2;
+  font-weight: bold;
+}
+
+.dropAreaText label {
+  padding: 0.5rem;
+}
+
+.fileInputButton {
+  /* background-color: #397a4b; */
+  color: #9bc0c9;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.fileInputButton input {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  background-color: #525e75;
+}
+
+.resizeOptionsCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #397a4b;
+}
+
+.resizeOptionsCont > div:first-child {
+  color: #2bbde2;
+  font-weight: bold;
+}
+
+.thumbnailsContainer {
+  width: 350px;
+  height: 350px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow-y: scroll;
+  margin-right: 2rem;
+  background-color: #50235a;
+}
+
+.thumbnailsContainer > div:first-child {
+  color: #2bbde2;
+  font-weight: bold;
+  padding-left: 1rem;
+}
+
+.thumbnailsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.thumbnailItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50px;
+  margin: 0.5rem;
+}
+
+.thumbnailItem img {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.thumbnailItemName {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}

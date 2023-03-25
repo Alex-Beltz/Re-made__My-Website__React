@@ -1,0 +1,20 @@
+.pdfDropBox {
+  background-color: #718b83;
+  width: 500px;
+  height: 500px;
+  border: 5px dashed rgb(124, 122, 122);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-self: center;
+}
+
+.pdfDropBox:hover {
+  border: 5px dashed rgb(179, 179, 179);
+  background-color: #54796d;
+}
+.pdfDropBoxText {
+  color: #0f43a3;
+  font-weight: bold;
+}
