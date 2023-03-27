@@ -1,5 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+// import { createRequire } from "module";
+// const require = createRequire(import.meta.url);
+
+// globalThis.util = require("util");
+// import "./setupProxy";
 import "./styles/index.css";
 import App from "./App.js";
 
