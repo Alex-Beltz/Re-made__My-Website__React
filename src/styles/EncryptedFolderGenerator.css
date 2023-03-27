@@ -1,0 +1,78 @@
+.FolderGeneratorToolContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.FolderGeneratorToolOverlay {
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.FolderGeneratorToolOverlayMessage {
+  max-width: 70%;
+}
+
+.FolderGeneratorToolInnerContainer {
+  display: flex;
+  width: 70%;
+  justify-content: space-evenly;
+}
+
+.FolderGeneratorToolDrawingContainer {
+  width: 500px;
+  height: 500px;
+  /* padding: 0.05rem; */
+  background-color: green;
+  position: relative;
+}
+
+/* .FolderGeneratorToolDrawingContainer canvas#drawing-canvas {
+  width: 500px;
+  height: 500px;
+} */
+/* import "../styles/EncryptedFolderGenerator.css" */
+
+.FolderGeneratorToolCountdownTimer {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  padding: 0.75rem;
+  background-color: burlywood;
+  font-weight: bold;
+  color: brown;
+  opacity: 0.75;
+  border-bottom-left-radius: 50%;
+  border-top-right-radius: 50%;
+  z-index: 99;
+}
+
+.FolderGeneratorToolGenteratedDataContainer {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 40%;
+}
+
+.FolderGeneratorToolGenteratedDataContainer button {
+  margin-bottom: 1rem;
+}
+
+.FolderGeneratorToolGenteratedDataContainer .GeneratedRandomString {
+  font-weight: bold;
+  letter-spacing: 0.15rem;
+  color: aquamarine;
+  background-color: black;
+  padding: 0.5rem;
+  user-select: text;
+}
