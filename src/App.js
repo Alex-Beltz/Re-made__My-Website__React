@@ -5,18 +5,20 @@ import WorkHistory from "./components/WorkHistory";
 import Gallery from "./components/Gallery";
 import ImageResizerTool from "./components/ImageResizerTool";
 // import PdfToVoiceTool from "./components/PdfToVoiceTool";
-import CryptoQuotes from "./components/CryptoQuotes";
+// import CryptoQuotes from "./components/CryptoQuotes";
 import PreciousMetalQuotes from "./components/PreciousMetalQuotes";
 // import Test from "./components/test";
+import EncryptedFolderGenerator from "./components/EncryptedFolderGenerator";
 
 //sidebar icons
-import CryptoQuotesIcon from "./icons/CryptoQuotes.png";
+// import CryptoQuotesIcon from "./icons/CryptoQuotes.png";
+import EncryptedFolderGeneratorIcon from "./icons/CryptoQuotes.png";
 import GalleryIcon from "./icons/Gallery.png";
 import ImageResizerToolIcon from "./icons/ImageResizerTool.png";
 // import PdfToVoiceToolIcon from "./icons/PdfToVoiceTool.png";
 import portfolioIcon from "./icons/portfolio.png";
 import PreciousMetalQuotesIcon from "./icons/PreciousMetalQuotes.png";
-import TimeZoneCalculatorIcon from "./icons/TimeZoneCalculator.png";
+// import TimeZoneCalculatorIcon from "./icons/TimeZoneCalculator.png";
 import WorkHistoryIcon from "./icons/WorkHistory.png";
 
 function App() {
@@ -51,7 +53,8 @@ function App() {
     gallery: <Gallery />,
     imageresizertool: <ImageResizerTool />,
     // pdftovoicetool: <PdfToVoiceTool />,
-    cryptoquotes: <CryptoQuotes />,
+    // cryptoquotes: <CryptoQuotes />,
+    encryptedfoldergenerator: <EncryptedFolderGenerator />,
     preciousmetalsquotes: <PreciousMetalQuotes />,
     // test: <Test />,
   };
@@ -62,8 +65,10 @@ function App() {
     { name: "Gallery", icon: GalleryIcon },
     { name: "Image Resizer Tool", icon: ImageResizerToolIcon },
     // { name: "PDF to Voice Tool", icon: PdfToVoiceToolIcon },
-    { name: "Crypto Quotes", icon: CryptoQuotesIcon },
+    // { name: "Crypto Quotes", icon: CryptoQuotesIcon },
+    { name: "Encrypted Folder Generator", icon: EncryptedFolderGeneratorIcon },
     { name: "Precious Metals Quotes", icon: PreciousMetalQuotesIcon },
+    // { name: "Encrypted Folder Generator", icon: PreciousMetalQuotesIcon },
     // { name: "Test", icon: TimeZoneCalculatorIcon },
   ];
 
