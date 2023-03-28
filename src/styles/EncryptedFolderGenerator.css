@@ -23,23 +23,16 @@
 
 .FolderGeneratorToolInnerContainer {
   display: flex;
-  width: 70%;
+  width: 95%;
   justify-content: space-evenly;
 }
 
 .FolderGeneratorToolDrawingContainer {
-  width: 500px;
-  height: 500px;
-  /* padding: 0.05rem; */
+  width: 400px;
+  height: 400px;
   background-color: green;
   position: relative;
 }
-
-/* .FolderGeneratorToolDrawingContainer canvas#drawing-canvas {
-  width: 500px;
-  height: 500px;
-} */
-/* import "../styles/EncryptedFolderGenerator.css" */
 
 .FolderGeneratorToolCountdownTimer {
   position: absolute;
@@ -56,7 +49,6 @@
 }
 
 .FolderGeneratorToolGenteratedDataContainer {
-  margin-left: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
