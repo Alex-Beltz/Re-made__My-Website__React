@@ -29,8 +29,13 @@ function App() {
     setSidebarOpen(!sidebarOpen);
   };
 
-  const sidebarWidth = sidebarOpen ? "30%" : "8%";
-  const contentWidth = sidebarOpen ? "92%" : "92%";
+  const sidebarWidth = sidebarOpen ? "40%" : "12%";
+  const contentWidth = sidebarOpen ? "88%" : "88%";
+
+  const sidebarListItemStyle = {
+    justifyContent: sidebarOpen ? "space-between" : "center",
+    padding: sidebarOpen ? "1.75rem" : "0",
+  };
 
   const sidebarSize = {
     width: sidebarWidth,
@@ -88,6 +93,7 @@ function App() {
               onClick={() =>
                 handleClick(icon.name.toLowerCase().replace(/\s+/g, ""))
               }
+              style={sidebarListItemStyle}
             >
               {sidebarOpen ? (
                 <React.Fragment>
