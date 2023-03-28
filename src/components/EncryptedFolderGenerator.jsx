@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import "../styles/EncryptedFolderGenerator.css";
 import "../styles/App.css";
 
 export default function EncryptedFolderGenerator() {
   const [drawing, setDrawing] = useState(false);
-  const [mouseX, setMouseX] = useState(0);
-  const [mouseY, setMouseY] = useState(0);
   const [randomString, setRandomString] = useState("");
   const [timer, setTimer] = useState(30);
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const [showOverlay, setShowOverlay] = useState(true);
+
+  const canvasRef = useRef(null);
+  const ctxRef = useRef(null);
 
   useEffect(() => {
     let interval;
@@ -23,37 +24,86 @@ export default function EncryptedFolderGenerator() {
     return () => clearInterval(interval);
   }, [drawing, timer]);
 
+  const handleMouseMove = useCallback(
+    (e) => {
+      if (drawing) {
+        const canvas = canvasRef.current;
+        const ctx = ctxRef.current;
+        const canvasRect = canvas.getBoundingClientRect();
+        let x = e.clientX - canvasRect.left;
+        let y = e.clientY - canvasRect.top;
+        if (x < 0) {
+          x = 0;
+        } else if (x > canvas.width) {
+          x = canvas.width;
+        }
+        if (y < 0) {
+          y = 0;
+        } else if (y > canvas.height) {
+          y = canvas.height;
+        }
+
+        ctx.lineTo(x, y);
+        ctx.stroke();
+      }
+    },
+    [drawing]
+  );
+
+  const handleMouseUp = useCallback(() => {
+    setDrawing(false);
+    setButtonDisabled(false);
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    document.removeEventListener("mousemove", handleMouseMove);
+    document.removeEventListener("mouseup", handleMouseUp);
+  }, [handleMouseMove]);
+
+  useEffect(() => {
+    if (drawing) {
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleMouseUp);
+    }
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [drawing, handleMouseMove, handleMouseUp]);
+
   function handleMouseDown(e) {
     setDrawing(true);
-    const canvas = document.getElementById("drawing-canvas");
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    ctxRef.current = ctx; // Store the canvas context in the ref
+
+    ctx.lineWidth = 5; // Set the line width for drawing
+    ctx.lineJoin = "round"; // Set the line join style
+    ctx.lineCap = "round"; // Set the line cap style
+
     const canvasRect = canvas.getBoundingClientRect();
-    setMouseX(e.clientX - canvasRect.left);
-    setMouseY(e.clientY - canvasRect.top);
+    let x = e.clientX - canvasRect.left;
+    let y = e.clientY - canvasRect.top;
+
+    ctx.beginPath(); // Start a new path for drawing
+    ctx.moveTo(x, y); // Move the starting point to the current coordinates
+
     setButtonDisabled(true);
   }
 
-  function handleMouseMove(e) {
-    if (!drawing) {
-      return;
-    }
-    const canvas = document.getElementById("drawing-canvas");
-    const ctx = canvas.getContext("2d");
-    ctx.beginPath();
-    ctx.strokeStyle = "#9DAD7F";
-    ctx.lineWidth = 0.25 * 16;
-    ctx.lineCap = "round";
-    const canvasRect = canvas.getBoundingClientRect();
-    ctx.moveTo(mouseX, mouseY);
-    setMouseX(e.clientX - canvasRect.left);
-    setMouseY(e.clientY - canvasRect.top);
-    ctx.lineTo(mouseX, mouseY);
-    ctx.stroke();
-  }
-
-  function handleMouseUp() {
-    setDrawing(false);
-    setButtonDisabled(false);
-  }
+  // function generateRandomString() {
+  //   if (timer === 0) {
+  //     const characters =
+  //       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^*()<>?/\":';:_-";
+  //     let randomChars = "";
+  //     for (let i = 0; i < 30; i++) {
+  //       const index = Math.floor(Math.random() * characters.length);
+  //       const char = characters.charAt(index);
+  //       randomChars += char;
+  //     }
+  //     setRandomString(randomChars);
+  //   }
+  // }
 
   function generateRandomString() {
     if (timer === 0) {
@@ -66,6 +116,7 @@ export default function EncryptedFolderGenerator() {
         randomChars += char;
       }
       setRandomString(randomChars);
+      setButtonDisabled(true); // Disable the button after generating the random string
     }
   }
 
@@ -74,7 +125,7 @@ export default function EncryptedFolderGenerator() {
     setButtonDisabled(true);
     setTimer(30);
     setRandomString("");
-    const canvas = document.getElementById("drawing-canvas");
+    const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
@@ -100,7 +151,10 @@ export default function EncryptedFolderGenerator() {
               to use on your computer. When drawing, please keep the mouse
               pressed for the full 30 seconds, while the password is being
               generated. If you don't, the timer will be reset and your password
-              will not be generated until you do.
+              will not be generated until you do. With the character set and
+              length of password being 30 chars., there are approximately 98
+              octillion (or 98 billion billion billion) possible combinations,
+              one of which will be randomly generated as yours.
             </p>
             <button onClick={handleOverlayClick}>Use encryption tool</button>
           </div>
@@ -118,11 +172,13 @@ export default function EncryptedFolderGenerator() {
           >
             <canvas
               id="drawing-canvas"
-              width="500"
-              height="500"
+              width="400"
+              height="400"
+              ref={canvasRef}
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}
               onMouseUp={handleMouseUp}
+              style={{ cursor: drawing ? "none" : "default" }}
             />
             <div className="FolderGeneratorToolCountdownTimer">{timer}s</div>
           </div>
