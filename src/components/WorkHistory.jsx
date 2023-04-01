@@ -42,13 +42,14 @@ export default function WorkHistory() {
         <div className="WorkExperienceDescription">
           <h2>Commercial Fisherman</h2>
           <p>
-            From 2004 to 2012, I worked as a deep sea catcher processor in the
-            Bering Sea for US Seafoods, fishing for cod, black cod, pollock,
-            mackerel, and many other species. I later worked for Captain Paul
-            Hill on the F/V Dalena based in Bellingham, Washington, fishing in
-            the North and South Pacific for Albacore Tuna from 2006 to 2012. In
-            2018, I worked for Captain Paul Hill again on the F/V Betty H. based
-            in Honolulu, Hawaii, fishing in the North Pacific for Albacore Tuna.
+            In 2004, I worked on a deep sea catcher processor in the Bering Sea
+            for US Seafoods, as a 'Combi' (Deckhand/Freezer/Processor), fishing
+            for cod, black cod, pollock, mackerel, and many other species. I
+            later worked for Captain Paul Hill on the F/V Dalena, home port
+            Bellingham, Washington, fishing in the North and South Pacific for
+            Albacore Tuna from 2006 to 2012. In 2018, I worked for Captain Paul
+            Hill again on the F/V Betty H. home port Honolulu, Hawaii, fishing
+            in the North Pacific for Albacore Tuna.
           </p>
         </div>
         <div className="WorkExperienceImg">
