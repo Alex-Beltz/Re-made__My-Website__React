@@ -8,11 +8,11 @@ import ImageResizerTool from "./components/ImageResizerTool";
 // import CryptoQuotes from "./components/CryptoQuotes";
 import PreciousMetalQuotes from "./components/PreciousMetalQuotes";
 // import Test from "./components/test";
-import EncryptedFolderGenerator from "./components/EncryptedFolderGenerator";
+import RandomPasswordGenerator from "./components/RandomPasswordGenerator";
 
 //sidebar icons
 // import CryptoQuotesIcon from "./icons/CryptoQuotes.png";
-import EncryptedFolderGeneratorIcon from "./icons/CryptoQuotes.png";
+import RandomPasswordGeneratorIcon from "./icons/CryptoQuotes.png";
 import GalleryIcon from "./icons/Gallery.png";
 import ImageResizerToolIcon from "./icons/ImageResizerTool.png";
 // import PdfToVoiceToolIcon from "./icons/PdfToVoiceTool.png";
@@ -59,7 +59,7 @@ function App() {
     imageresizertool: <ImageResizerTool />,
     // pdftovoicetool: <PdfToVoiceTool />,
     // cryptoquotes: <CryptoQuotes />,
-    encryptedfoldergenerator: <EncryptedFolderGenerator />,
+    randompasswordgenerator: <RandomPasswordGenerator />,
     preciousmetalsquotes: <PreciousMetalQuotes />,
     // test: <Test />,
   };
@@ -71,7 +71,7 @@ function App() {
     { name: "Image Resizer Tool", icon: ImageResizerToolIcon },
     // { name: "PDF to Voice Tool", icon: PdfToVoiceToolIcon },
     // { name: "Crypto Quotes", icon: CryptoQuotesIcon },
-    { name: "Encrypted Folder Generator", icon: EncryptedFolderGeneratorIcon },
+    { name: "Random Password Generator", icon: RandomPasswordGeneratorIcon },
     { name: "Precious Metals Quotes", icon: PreciousMetalQuotesIcon },
     // { name: "Encrypted Folder Generator", icon: PreciousMetalQuotesIcon },
     // { name: "Test", icon: TimeZoneCalculatorIcon },
