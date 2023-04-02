@@ -1,25 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./styles/App.css";
 import Portfolio from "./components/Portfolio";
+import CertTraining from "./components/CertTraining";
+import CloudEngineering from "./components/CloudEngineering";
+
 import WorkHistory from "./components/WorkHistory";
 import Gallery from "./components/Gallery";
+import RegExTool from "./components/RegExTool";
+import PasswordGenerator from "./components/PasswordGenerator";
+import PasswordManager from "./components/PasswordManager";
 import ImageResizerTool from "./components/ImageResizerTool";
-// import PdfToVoiceTool from "./components/PdfToVoiceTool";
-// import CryptoQuotes from "./components/CryptoQuotes";
+import TextToVoiceTool from "./components/TextToVoiceTool";
 import PreciousMetalQuotes from "./components/PreciousMetalQuotes";
+import TimeZoneCalculator from "./components/TimeZoneCalculator";
+// import CryptoQuotes from "./components/CryptoQuotes";
 // import Test from "./components/test";
-import RandomPasswordGenerator from "./components/RandomPasswordGenerator";
 
 //sidebar icons
-// import CryptoQuotesIcon from "./icons/CryptoQuotes.png";
-import RandomPasswordGeneratorIcon from "./icons/CryptoQuotes.png";
-import GalleryIcon from "./icons/Gallery.png";
-import ImageResizerToolIcon from "./icons/ImageResizerTool.png";
-// import PdfToVoiceToolIcon from "./icons/PdfToVoiceTool.png";
 import portfolioIcon from "./icons/portfolio.png";
-import PreciousMetalQuotesIcon from "./icons/PreciousMetalQuotes.png";
-// import TimeZoneCalculatorIcon from "./icons/TimeZoneCalculator.png";
+import CertTrainingIcon from "./icons/CertTraining.png";
+import CloudEngineeringIcon from "./icons/CloudEngineering.png";
 import WorkHistoryIcon from "./icons/WorkHistory.png";
+import GalleryIcon from "./icons/Gallery.png";
+import RegExToolIcon from "./icons/RegExTool.png";
+import PasswordGeneratorIcon from "./icons/CryptoQuotes.png";
+import PasswordManagerIcon from "./icons/PasswordManager.png";
+import ImageResizerToolIcon from "./icons/ImageResizerTool.png";
+import TextToVoiceToolIcon from "./icons/TextToVoiceTool.png";
+import PreciousMetalQuotesIcon from "./icons/PreciousMetalQuotes.png";
+import TimeZoneCalculatorIcon from "./icons/TimeZoneCalculator.png";
+// import CryptoQuotesIcon from "./icons/CryptoQuotes.png";
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -54,26 +64,35 @@ function App() {
 
   const components = {
     portfolio: <Portfolio />,
+    certtraining: <CertTraining />,
+    cloudengineering: <CloudEngineering />,
     workhistory: <WorkHistory />,
     gallery: <Gallery />,
-    imageresizertool: <ImageResizerTool />,
-    // pdftovoicetool: <PdfToVoiceTool />,
-    // cryptoquotes: <CryptoQuotes />,
-    randompasswordgenerator: <RandomPasswordGenerator />,
+    regextool: <RegExTool />,
+    passwordgenerator: <PasswordGenerator />,
+    passwordmanager: <PasswordManager />,
+    imageresizer: <ImageResizerTool />,
+    texttovoice: <TextToVoiceTool />,
     preciousmetalsquotes: <PreciousMetalQuotes />,
+    timezonecalculator: <TimeZoneCalculator />,
+    // cryptoquotes: <CryptoQuotes />,
     // test: <Test />,
   };
 
   const icons = [
     { name: "Portfolio", icon: portfolioIcon },
+    { name: "Cert / Training", icon: CertTrainingIcon },
+    { name: "Cloud Engineering", icon: CloudEngineeringIcon },
     { name: "Work History", icon: WorkHistoryIcon },
     { name: "Gallery", icon: GalleryIcon },
-    { name: "Image Resizer Tool", icon: ImageResizerToolIcon },
-    // { name: "PDF to Voice Tool", icon: PdfToVoiceToolIcon },
-    // { name: "Crypto Quotes", icon: CryptoQuotesIcon },
-    { name: "Random Password Generator", icon: RandomPasswordGeneratorIcon },
+    { name: "RegEx Tool", icon: RegExToolIcon },
+    { name: "Password Generator", icon: PasswordGeneratorIcon },
+    { name: "Password Manager", icon: PasswordManagerIcon },
+    { name: "Image Resizer", icon: ImageResizerToolIcon },
+    { name: "Text To Voice", icon: TextToVoiceToolIcon },
     { name: "Precious Metals Quotes", icon: PreciousMetalQuotesIcon },
-    // { name: "Encrypted Folder Generator", icon: PreciousMetalQuotesIcon },
+    { name: "Time Zone Calculator", icon: TimeZoneCalculatorIcon },
+    // { name: "Crypto Quotes", icon: CryptoQuotesIcon },
     // { name: "Test", icon: TimeZoneCalculatorIcon },
   ];
 
@@ -91,7 +110,7 @@ function App() {
               key={icon.name}
               className="sidebarListItemStyle"
               onClick={() =>
-                handleClick(icon.name.toLowerCase().replace(/\s+/g, ""))
+                handleClick(icon.name.toLowerCase().replace(/[\s/_-]+/g, ""))
               }
               style={sidebarListItemStyle}
             >
