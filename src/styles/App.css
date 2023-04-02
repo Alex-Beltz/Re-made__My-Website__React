@@ -113,7 +113,7 @@ body,
   visibility: hidden;
   width: auto;
   height: auto;
-  font-size: 0.5rem;
+  font-size: 0.75rem;
   padding: 0.25rem;
   border-radius: 1rem;
   background-color: #0e2755;
@@ -122,8 +122,8 @@ body,
   position: absolute;
   z-index: 100;
   top: 4%;
-  right: -10rem;
-  transform: translateX(-50%);
+  /* right: -10rem; */
+  /* transform: translateX(-50%); */
   white-space: nowrap;
   opacity: 0.75;
 }
